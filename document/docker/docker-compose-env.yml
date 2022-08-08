@@ -21,11 +21,11 @@ services:
       - /mydata/redis/data:/data #数据文件挂载
     ports:
       - 6379:6379
-  nginx:
+  nginx:    #注意教程有误:是把教程里nginx.conf放到/mydata/nginx/conf/目录下，而不是教程里说的/mydata/nginx目录下（解决错误的博客：https://blog.csdn.net/u013189488/article/details/125051323）
     image: nginx:1.22
     container_name: nginx
     volumes:
-      - /mydata/nginx/conf:/etc/nginx #配置文件挂载
+      - /mydata/nginx/conf/nginx.conf:/etc/nginx/nginx.conf #配置文件挂载
       - /mydata/nginx/html:/usr/share/nginx/html #静态资源根目录挂载
       - /mydata/nginx/log:/var/log/nginx #日志文件挂载
     ports:

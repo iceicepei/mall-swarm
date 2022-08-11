@@ -259,7 +259,7 @@
                                         <descriptorRef>artifact</descriptorRef>
                                     </assembly>
                                     <!--定义容器启动命令-->
-                                    <entryPoint>["java", "-jar","-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]</entryPoint>
+                                    <entryPoint>["java", "-jar","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=12345","-Dspring.profiles.active=prod","/${project.build.finalName}.jar"]</entryPoint>
                                     <!--定义维护者-->
                                     <maintainer>macrozheng</maintainer>
                                 </build>

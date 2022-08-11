@@ -5,6 +5,7 @@ services:
     container_name: mall-admin
     ports:
       - 8080:8080
+      - 12345:12345
     volumes:
       - /mydata/app/mall-admin/logs:/var/logs
       - /etc/localtime:/etc/localtime
